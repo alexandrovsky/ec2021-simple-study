@@ -86,7 +86,7 @@ public class SendToGoogleForms : MonoBehaviour
 
         string query = QueryString(data);
         print(query);
-        string url = $"{LOGS_BASE_URL}?{query}";
+        string url = $"{SURVEY_BASE_URL}?{query}";
 
 
         Application.OpenURL(url);

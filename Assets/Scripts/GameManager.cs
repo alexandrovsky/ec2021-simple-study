@@ -59,7 +59,9 @@ public class GameManager : MonoBehaviour
 
         InitParticipant();
         infoText.text = $"Hello and welcome to the study. \n" +
-            $"Your task is to play a catch game for {levelDurationSec} sec. using {InputDescKey(player.inputMethod)} \n" +
+            $"Your task is to play a catch game for {levelDurationSec} sec. \n" +
+            $"The goal is to collect yellow coins while avoiding red coins" +
+			$"You control the player using {InputDescKey(player.inputMethod)} \n" +
             $"Please press start when you are ready.";
     }
 
@@ -71,7 +73,7 @@ public class GameManager : MonoBehaviour
 
     void InitParticipant()
 	{
-        ParticipantLog["participant_id"] = SystemInfo.deviceUniqueIdentifier;
+        ParticipantLog["participant_id"] = Guid.NewGuid().ToString();
 
         player.inputMethod = (Player.InputMethod)UnityEngine.Random.Range(0,Enum.GetNames(typeof(Player.InputMethod)).Length);
         ParticipantLog["condition"] = player.inputMethod.ToString();
