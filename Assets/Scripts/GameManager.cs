@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
         InitParticipant();
         infoText.text = $"Hello and welcome to the study. \n" +
             $"Your task is to play a catch game for {levelDurationSec} sec. \n" +
-            $"The goal is to collect yellow coins while avoiding red coins" +
+            $"The goal is to collect the coins while avoiding the bombs." +
 			$"You control the player using {InputDescKey(player.inputMethod)} \n" +
             $"Please press start when you are ready.";
     }
