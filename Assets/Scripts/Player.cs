@@ -38,7 +38,8 @@ public class Player : MonoBehaviour
     float MouseInput()
     {
         Vector3 pos = Camera.main.ScreenToViewportPoint(Input.mousePosition);
-        return (pos.x - 0.5f) * 2;
+        Vector3 playerPos = Camera.main.WorldToViewportPoint(transform.position);
+        return (pos.x - playerPos.x) * 2;
     }
 
     // Update is called once per frame
